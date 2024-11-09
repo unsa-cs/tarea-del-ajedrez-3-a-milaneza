@@ -8,5 +8,7 @@ void display(){
   int *a;
   memoryAlloc((void **)&a, sizeof(int));
   countMemoryEntries();
+  unregisterPointer((void **)&a);
+  countMemoryEntries();
   garbageCollector();
 }
