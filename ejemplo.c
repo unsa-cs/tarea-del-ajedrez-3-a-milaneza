@@ -8,8 +8,8 @@ void display(){
   int *a;
   int *b;
   memoryAlloc((void **)&a, sizeof(int));
-  memoryAlloc((void **)&b, sizeof(int));
-
+  //memoryAlloc((void **)&b, sizeof(int));
+  registerPointerToMemory((void **)&b, (void *)a); 
   countMemoryEntries();
   unregisterPointer((void **)&a);
   countMemoryEntries();
