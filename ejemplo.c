@@ -5,13 +5,11 @@
 void display(){
   //char** blackSquare = reverse(whiteSquare);
   //interpreter(blackSquare);
-  int *a;
-  int *b;
-  memoryAlloc((void **)&a, sizeof(int));
-  //memoryAlloc((void **)&b, sizeof(int));
-  registerPointerToMemory((void **)&b, (void *)a); 
+  int **a;
+  memoryAlloc((void **)&a, 2*sizeof(int)); 
   countMemoryEntries();
-  unregisterPointer((void **)&a);
+  for (int i = 0; i<2; i++)
+    memoryAlloc((void**)&a[i], 2*sizeof(int));
   countMemoryEntries();
   garbageCollector();
 }
