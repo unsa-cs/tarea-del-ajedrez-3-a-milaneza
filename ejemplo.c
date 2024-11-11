@@ -6,10 +6,10 @@ void display(){
   //char** blackSquare = reverse(whiteSquare);
   //interpreter(blackSquare);
   //asignar
-  int rows=8; 
+  int rows=58; 
   int cols=rows;
   int **a;
-  memoryAlloc((void **)&a, (rows+1)*sizeof(int)); 
+  memoryAlloc((void **)&a, (rows+1)*sizeof(int*)); 
   countMemoryEntries();
   for (int i = 0; i<rows; i++)
     memoryAlloc((void**)&a[i], (cols+1)*sizeof(int));
