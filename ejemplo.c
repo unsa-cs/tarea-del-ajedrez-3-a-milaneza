@@ -6,15 +6,17 @@ void display(){
   //char** blackSquare = reverse(whiteSquare);
   //interpreter(blackSquare);
   //asignar
+  int rows=8; 
+  int cols=rows;
   int **a;
-  memoryAlloc((void **)&a, 59*sizeof(int)); 
+  memoryAlloc((void **)&a, (rows+1)*sizeof(int)); 
   countMemoryEntries();
-  for (int i = 0; i<58; i++)
-    memoryAlloc((void**)&a[i], 59*sizeof(int));
+  for (int i = 0; i<rows; i++)
+    memoryAlloc((void**)&a[i], (cols+1)*sizeof(int));
   countMemoryEntries();
   
   //desvincular memoria
-  for(int i=0;i<58;i++){
+  for(int i=0;a[i];i++){
     unregisterPointer((void**)&a[i]);
   }
   countMemoryEntries();
