@@ -7,14 +7,14 @@ void display(){
   //interpreter(blackSquare);
   //asignar
   int **a;
-  memoryAlloc((void **)&a, 2*sizeof(int)); 
+  memoryAlloc((void **)&a, 59*sizeof(int)); 
   countMemoryEntries();
-  for (int i = 0; i<2; i++)
-    memoryAlloc((void**)&a[i], 2*sizeof(int));
+  for (int i = 0; i<58; i++)
+    memoryAlloc((void**)&a[i], 59*sizeof(int));
   countMemoryEntries();
   
   //desvincular memoria
-  for(int i=0;i<2;i++){
+  for(int i=0;i<58;i++){
     unregisterPointer((void**)&a[i]);
   }
   countMemoryEntries();
