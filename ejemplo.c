@@ -6,6 +6,7 @@ void display(){
   //char** blackSquare = reverse(whiteSquare);
   //interpreter(blackSquare);
   //asignar
+  /*
   int rows=58; 
   int cols=rows;
   int **a;
@@ -21,6 +22,15 @@ void display(){
   }
   countMemoryEntries();
   unregisterPointer((void**)&a);
+  countMemoryEntries();
+  garbageCollector();
+  */
+  int *a;
+  memoryAlloc((void **)&a, sizeof(int));
+  registerPointerToMemory((void **)&a, a);
+  //registerPointerToMemory((void **)&a, a);
+  countMemoryEntries();
+  unregisterPointer((void **)&a);
   countMemoryEntries();
   garbageCollector();
 }
