@@ -1,12 +1,12 @@
 #include "chess.h"
 #include "figures.h"
 #include "gc.h"
-void unlinkMemory_2(char** fig){
+void unlinkMemory_2(char*** fig){
   countMemoryEntries();
-  for(int i = 0; fig[i]; i++)
-    unregisterPointer((void**)&fig[i]);
+  for(int i = 0; (*fig)[i]; i++)
+    unregisterPointer((void**)&(*fig[i]));
   countMemoryEntries();
-  unregisterPointer((void**)&fig);
+  unregisterPointer((void**)fig);
   countMemoryEntries();
 }
 
@@ -32,6 +32,6 @@ void display(){
   countMemoryEntries();
   unregisterPointer((void**)&a);
   countMemoryEntries();*/
-  unlinkMemory_2(a);
+  unlinkMemory_2(&a);
   garbageCollector();
 }
