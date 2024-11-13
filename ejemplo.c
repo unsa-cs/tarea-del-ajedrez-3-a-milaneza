@@ -12,10 +12,11 @@ void unlinkMemory_2(char*** fig){
 
 
 void display(){
-  //char** blackSquare = reverse(whiteSquare);
-  //interpreter(blackSquare);
+  char** blackSquare = reverse(whiteSquare);
+  interpreter(blackSquare);
+  garbageCollector();
   //asignar
-  int rows=1; 
+  /*int rows=1; 
   int cols=rows;
   //funcion
   char **a;
@@ -23,7 +24,7 @@ void display(){
   countMemoryEntries();
   for (int i = 0; i<rows; i++)
     memoryAlloc((void**)&a[i], (cols+1)*sizeof(char));
-  /*
+  
   countMemoryEntries();
   //desvincular memoria
   for(int i=0;a[i];i++){
@@ -31,7 +32,9 @@ void display(){
   }
   countMemoryEntries();
   unregisterPointer((void**)&a);
-  countMemoryEntries();*/
+  countMemoryEntries();
   unlinkMemory_2(&a);
-  garbageCollector();
+  */
+      
+  
 }
