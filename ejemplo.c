@@ -15,8 +15,9 @@ void display(){
   //char** blackSquare = reverse(whiteSquare);
   //interpreter(blackSquare);
   //asignar
-  int rows=10; 
+  int rows=1; 
   int cols=rows;
+  //funcion
   char **a;
   memoryAlloc((void **)&a, (rows+1)*sizeof(char*)); 
   countMemoryEntries();
