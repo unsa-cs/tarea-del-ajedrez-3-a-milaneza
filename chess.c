@@ -5,7 +5,7 @@
 
 void  allocateMemory(int rows, size_t cols,char*** fig){
   
-  memoryAlloc((void**)*fig, sizeof(char*)*(rows + 1));
+  memoryAlloc((void**)fig, sizeof(char*)*(rows + 1));
   for(int i = 0; i < rows; i++)
     memoryAlloc((void**)&(*fig)[i], sizeof(char)*(cols + 1));
   
@@ -14,9 +14,9 @@ void  allocateMemory(int rows, size_t cols,char*** fig){
 void unlinkMemory(char*** fig){
   countMemoryEntries();
   for(int i = 0; (*fig)[i]; i++)
-    unregisterPointer((void**)&((*fig)[i]));
+    unregisterPointer((void**)&(*fig)[i]);
   countMemoryEntries();
-  unregisterPointer((void**)*fig);
+  unregisterPointer((void**)fig);
   countMemoryEntries();
 }
 
