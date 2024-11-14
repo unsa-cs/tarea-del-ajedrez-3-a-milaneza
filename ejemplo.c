@@ -4,8 +4,9 @@
 
 void display(){
   //char** blackSquare = reverse(king);
-  char** bishopknight = join(bishop, knight);
-  interpreter(join(bishopknight, rook));
+  //char** bishopknight = join(bishop, knight);
+  char** knighsquare = superImpose(knight, whiteSquare);
+  interpreter(knighsquare);
   garbageCollector();
   //asignar
   /*int rows=1; 

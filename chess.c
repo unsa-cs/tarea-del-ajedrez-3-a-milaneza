@@ -78,3 +78,26 @@ char** join(char** fig1, char** fig2){
   return figurejoin;
 }
 
+char** superImpose(char** fig1, char** fig2){
+  int rows = 0;
+  while(fig1[++rows]);
+  
+  int cols = 0;
+  while(fig1[0][++cols]);
+
+  char** figuresuperImpose;
+  allocateMemory(rows, cols, &figuresuperImpose);
+
+  for(int i = 0; fig1[i]; i++){
+    for(int j = 0; fig1[0][j]; j++){
+      figuresuperImpose[i][j] = fig2[i][j];
+      if (fig1[i][j] != ' ')
+        figuresuperImpose[i][j] = fig1[i][j]; 
+
+    }
+    figuresuperImpose[i][cols] = 0;
+  }
+  figuresuperImpose[rows] = 0;
+  unlinkMemory(&figuresuperImpose);
+  return figuresuperImpose;
+}
