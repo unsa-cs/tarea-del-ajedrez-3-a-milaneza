@@ -31,8 +31,15 @@ char** reverse(char** fig){
   allocateMemory(rows, cols,&newFig);
 
   for(int i = 0; fig[i]; i++){
-    for(int j = 0; fig[0][j]; j++)
-      newFig[i][j] = fig[i][j];
+    for(int j = 0; fig[0][j]; j++){
+      switch(fig[i][j]){
+        case '@': newFig[i][j] = '.'; break;
+        case '.': newFig[i][j] = '@'; break;
+        case '=': newFig[i][j] = '_'; break;
+        case '_': newFig[i][j] = '='; break;
+        default : newFig[i][j] = fig[i][j]; break;
+      }
+    }
     newFig[i][cols] = 0;
   }
   newFig[rows] = 0;
