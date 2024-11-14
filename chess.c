@@ -52,9 +52,12 @@ char** join(char** fig1, char** fig2){
   
   int col = 0;
   while(fig1[0][++col]);
+
+  int col2 = 0;
+  while(fig2[0][++col2]);
   
   char** figurejoin;
-  allocateMemory(row,col*2-1,&figurejoin);
+  allocateMemory(row,col+col2-1,&figurejoin);
   for(int i = 0; i < row; i++){
     int j = 0, k = 0;
     while(fig1[i][k]){
@@ -74,3 +77,4 @@ char** join(char** fig1, char** fig2){
   unlinkMemory(&figurejoin);
   return figurejoin;
 }
+

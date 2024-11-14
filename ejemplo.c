@@ -3,8 +3,9 @@
 #include "gc.h"
 
 void display(){
-  char** blackSquare = reverse(king);
-  interpreter(blackSquare);
+  //char** blackSquare = reverse(king);
+  char** bishopknight = join(bishop, knight);
+  interpreter(join(bishopknight, rook));
   garbageCollector();
   //asignar
   /*int rows=1; 
