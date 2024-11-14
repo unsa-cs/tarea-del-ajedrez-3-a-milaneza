@@ -46,4 +46,31 @@ char** reverse(char** fig){
   unlinkMemory(&newFig);
   return newFig;
 }
-
+char** join(char** fig1, char** fig2){
+  int row = 0;
+  while(fig1[++row]);
+  
+  int col = 0;
+  while(fig1[0][++col]);
+  
+  char** figurejoin;
+  allocateMemory(row,col*2-1,&figurejoin);
+  for(int i = 0; i < row; i++){
+    int j = 0, k = 0;
+    while(fig1[i][k]){
+      figurejoin[i][j] = fig1[i][k]; 
+      k++;
+      j++;
+    }
+    k=0;
+    while(fig2[i][k]){
+      figurejoin[i][j] = fig2[i][k];
+      k++;
+      j++;
+    }
+    figurejoin[i][col*2] = 0 ; 
+  }
+  figurejoin[row]=0;
+  unlinkMemory(&figurejoin);
+  return figurejoin;
+}
